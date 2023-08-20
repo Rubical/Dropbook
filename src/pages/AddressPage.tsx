@@ -4,7 +4,7 @@ import { projectsData } from "../data/data";
 import ProjectCard from "../components/ProjectCard";
 import { Box } from "@mui/material";
 
-const AdressPage: FC = () => {
+const AddressPage: FC = () => {
   return (
     <Box
       sx={{
@@ -34,4 +34,4 @@ const AdressPage: FC = () => {
   );
 };
 
-export default AdressPage;
+export default AddressPage;

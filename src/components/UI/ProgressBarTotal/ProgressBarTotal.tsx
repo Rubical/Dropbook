@@ -1,5 +1,5 @@
 import { FC } from "react";
-import style from "./ProgressBar.module.css";
+import style from "./ProgressBarTotal.module.css";
 import { IAirdropProject } from "../../../types/types";
 
 type TypeProgressBar = Pick<
@@ -7,7 +7,7 @@ type TypeProgressBar = Pick<
   "transactionCount" | "bridgedAmount" | "bridgedTarget" | "transactionTarget"
 >;
 
-const ProgressBar: FC<TypeProgressBar> = ({
+const ProgressBarTotal: FC<TypeProgressBar> = ({
   transactionCount,
   bridgedAmount,
   bridgedTarget,
@@ -31,4 +31,4 @@ const ProgressBar: FC<TypeProgressBar> = ({
   );
 };
 
-export default ProgressBar;
+export default ProgressBarTotal;

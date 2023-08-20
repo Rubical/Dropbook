@@ -1,13 +1,20 @@
 import Header from "./layouts/Header";
-import AdressPage from "./pages/AddressPage";
+import AddressPage from "./pages/AddressPage";
 import { theme } from "./styles/theme";
 import { ThemeProvider } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      <AdressPage />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:address" element={<AddressPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

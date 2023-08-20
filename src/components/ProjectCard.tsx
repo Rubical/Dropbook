@@ -7,7 +7,8 @@ import { FC } from "react";
 import StyledCard from "./UI/Card/StyledCard";
 import { IAirdropProject } from "../types/types";
 import { Box, Slider } from "@mui/material";
-import ProgressBar from "./UI/ProgressBar/ProgressBar";
+import ProgressBarTotal from "./UI/ProgressBarTotal/ProgressBarTotal";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 const ProjectCard: FC<IAirdropProject> = ({
   name,
@@ -57,16 +58,7 @@ const ProjectCard: FC<IAirdropProject> = ({
         >
           Transaction count
         </Typography>
-        <Slider
-          aria-valuetext="Transaction count"
-          defaultValue={transactionCount}
-          valueLabelDisplay="auto"
-          step={1}
-          min={0}
-          max={transactionTarget}
-          marks
-          sx={{ width: "200px" }}
-        />
+        <ProgressBar animated now={45} />
         <Typography
           sx={{
             fontSize: "13px",
@@ -99,7 +91,7 @@ const ProjectCard: FC<IAirdropProject> = ({
           Get details
         </Button>
       </CardActions>
-      <ProgressBar
+      <ProgressBarTotal
         transactionCount={transactionCount}
         transactionTarget={transactionTarget}
         bridgedAmount={bridgedAmount}
