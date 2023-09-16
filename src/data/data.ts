@@ -9,9 +9,9 @@ export const projectsData: IAirdropProject[] = [
   {
     name: "LayerZero",
     logo: layerZeroImg,
-    transactionCount: 100,
+    transactionCount: 101,
     transactionTarget: 100,
-    bridgedAmount: 3000,
+    bridgedAmount: 30000,
     bridgedTarget: 3000,
     updateTime: "29.07.2023",
   },

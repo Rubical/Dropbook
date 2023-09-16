@@ -16,8 +16,6 @@ const AddressPage: FC = () => {
         padding: "30px 100px",
       }}
     >
-      <AddCard />
-
       {projectsData.map((project) => (
         <ProjectCard
           name={project.name}
@@ -30,6 +28,7 @@ const AddressPage: FC = () => {
           key={project.name}
         />
       ))}
+      <AddCard />
     </Box>
   );
 };

@@ -6,9 +6,9 @@ import Typography from "@mui/material/Typography";
 import { FC } from "react";
 import StyledCard from "./UI/Card/StyledCard";
 import { IAirdropProject } from "../types/types";
-import { Box, Slider } from "@mui/material";
-import ProgressBarTotal from "./UI/ProgressBarTotal/ProgressBarTotal";
-import ProgressBar from "react-bootstrap/ProgressBar";
+import { Box } from "@mui/material";
+import CircularProgressBar from "./UI/ProgressBar/ProgressBarCircular/ProgressBarCircular";
+import ProgressBarLinear from "./UI/ProgressBar/ProgressBarLinear/ProgressBarLinear";
 
 const ProjectCard: FC<IAirdropProject> = ({
   name,
@@ -46,38 +46,72 @@ const ProjectCard: FC<IAirdropProject> = ({
         </Typography>
       </CardContent>
       <CardActions
-        sx={{ display: "flex", flexDirection: "column", marginBottom: "30px" }}
+        sx={{ display: "flex", flexDirection: "column", marginBottom: "15px" }}
       >
-        <Typography
-          sx={{
-            fontSize: "13px",
-            alignSelf: "flex-start",
-            color: "lightgray",
-            marginLeft: "8px",
-          }}
-        >
-          Transaction count
-        </Typography>
-        <ProgressBar animated now={45} />
-        <Typography
-          sx={{
-            fontSize: "13px",
-            alignSelf: "flex-start",
-            color: "lightgray",
-          }}
-        >
-          Bridged amount
-        </Typography>
-        <Slider
-          aria-valuetext="Bridged amount"
-          defaultValue={bridgedAmount}
-          valueLabelDisplay="auto"
-          step={bridgedTarget / 200}
-          min={0}
-          max={bridgedTarget}
-          disabled
-          sx={{ width: "200px" }}
-        />
+        <Box sx={{ display: "flex", columnGap: "30px", marginBottom: "20px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "13px",
+                fontWeight: "600",
+                alignSelf: "flex-start",
+                color: "lightgray",
+                marginLeft: "8px",
+                marginBottom: "10px",
+              }}
+            >
+              Transactions
+            </Typography>
+            <CircularProgressBar
+              selectedValue={transactionCount}
+              maxValue={transactionTarget}
+              backgroundColor={"black"}
+              textColor="white"
+              activeStrokeColor="#5db75d"
+              inactiveStrokeColor={"white"}
+              radius={30}
+              valueFontSize={12}
+              strokeWidth={5}
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "13px",
+                fontWeight: "600",
+                alignSelf: "flex-start",
+                color: "lightgray",
+                marginBottom: "10px",
+              }}
+            >
+              Bridged
+            </Typography>
+            <CircularProgressBar
+              selectedValue={bridgedAmount}
+              maxValue={bridgedTarget}
+              backgroundColor={"black"}
+              textColor="white"
+              activeStrokeColor="#5db75d"
+              inactiveStrokeColor={"white"}
+              radius={30}
+              valueFontSize={12}
+              strokeWidth={5}
+              additionalMark={"$"}
+            />
+          </Box>
+        </Box>
         <Button
           sx={{
             border: "2px solid",
@@ -91,7 +125,7 @@ const ProjectCard: FC<IAirdropProject> = ({
           Get details
         </Button>
       </CardActions>
-      <ProgressBarTotal
+      <ProgressBarLinear
         transactionCount={transactionCount}
         transactionTarget={transactionTarget}
         bridgedAmount={bridgedAmount}
