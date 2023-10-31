@@ -1,22 +1,24 @@
 import Header from "./layouts/Header";
-import AddressPage from "./pages/AddressPage";
-import { theme } from "./styles/theme";
-import { ThemeProvider } from "@mui/material";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import {theme} from "./styles/theme";
+import {ThemeProvider} from "@mui/material";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {routes} from "./router/routes";
+import {store} from "./store/store";
+import {Provider} from "react-redux";
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:address" element={<AddressPage />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
+    return (
+        <Provider store={store}>
+            <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <Header/>
+                <Routes>
+                    {routes.map(route => <Route key={route.path} path={route.path} element={<route.element/>}/>)}
+                </Routes>
+            </BrowserRouter>
+        </ThemeProvider>
+        </Provider>
+    );
 }
 
 export default App;

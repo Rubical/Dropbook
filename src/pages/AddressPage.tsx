@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import { Box } from "@mui/material";
 
 const AddressPage: FC = () => {
+
   return (
     <Box
       sx={{
@@ -26,6 +27,7 @@ const AddressPage: FC = () => {
           bridgedTarget={project.bridgedTarget}
           updateTime={project.updateTime}
           key={project.name}
+          method={project.method}
         />
       ))}
       <AddCard />
