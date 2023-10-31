@@ -9,8 +9,9 @@ const Header: FC = () => {
     return (
         <Box
             sx={{
-                height: "70px",
+                height: "75px",
                 width: "100%",
+                backgroundColor: 'rgb(17,17,17)',
                 boxShadow:
                     "rgba(65, 65, 65, 0.58) 1px 1px 4px inset, rgba(65, 65, 65, 0.58) -1px -1px 4px inset",
                 display: "flex",
@@ -21,17 +22,17 @@ const Header: FC = () => {
             <Link to={"/"} onClick={() => {
                 clearAddress()
             }} style={{display: "flex", alignItems: "center"}}>
-                <img src={logo} alt="logo" style={{width: "35px", height: "40px"}}/>
+                <img src={logo} alt="logo" style={{width: "18px", height: "21px"}}/>
                 <Typography
                     sx={{
                         color: "rgba(255,255,255,0.73)",
-                        fontSize: "23px",
+                        fontSize: "21px",
                         fontWeight: "600",
                         marginLeft: "1px",
-                        marginTop: "17px",
+                        letterSpacing: '0.7px'
                     }}
                 >
-                    ropbook
+                    ROPBOOK
                 </Typography>
             </Link>
         </Box>

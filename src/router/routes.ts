@@ -7,7 +7,7 @@ export const routes = [
         element: HomePage
     },
     {
-        path: ':address',
+        path: '/dashboard/:address',
         element: AddressPage
     }
 ]

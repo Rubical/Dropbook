@@ -20,7 +20,7 @@ const HomePage: FC = () => {
         }
         else {
             changeVisibility('hidden')
-            navigate(`/${address}`)
+            navigate(`/dashboard/${address}`)
         }
     }
 
@@ -28,7 +28,7 @@ const HomePage: FC = () => {
         <Box
             sx={{
                 position: 'relative',
-                minHeight: '90vh',
+                minHeight: 'calc(100vh - 75px)',
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

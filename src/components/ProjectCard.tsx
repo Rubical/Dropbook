@@ -54,7 +54,7 @@ const ProjectCard: FC<IAirdropProject> = ({
                 </Typography>
             </CardContent>
             <CardActions
-                sx={{display: "flex", flexDirection: "column", marginBottom: "15px"}}
+                sx={{display: "flex", flexDirection: "column", marginBottom: "10px"}}
             >
                 <Box sx={{display: "flex", columnGap: "30px", marginBottom: "20px"}}>
                     <Box
@@ -70,7 +70,6 @@ const ProjectCard: FC<IAirdropProject> = ({
                                 fontWeight: "600",
                                 alignSelf: "flex-start",
                                 color: "lightgray",
-                                marginLeft: "8px",
                                 marginBottom: "10px",
                             }}
                         >
@@ -102,6 +101,7 @@ const ProjectCard: FC<IAirdropProject> = ({
                                 alignSelf: "flex-start",
                                 color: "lightgray",
                                 marginBottom: "10px",
+                                marginLeft: '4px'
                             }}
                         >
                             Bridged
@@ -141,6 +141,7 @@ const ProjectCard: FC<IAirdropProject> = ({
                 bridgedAmount={bridgedAmount}
                 bridgedTarget={bridgedTarget}
             />
+            <Typography sx={{fontSize: '13px', marginTop: '3px'}}>Your airdrop chances</Typography>
         </StyledCard>
     );
 };
